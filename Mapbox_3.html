@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Lab 4: Emergency Preparedness</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="This website was created by Lindsey Villegas to store the Masters program labs." />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Lindsey Villegas" />
+
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+
+		<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+
+		<!-- Animate.css -->
+		<link rel="stylesheet" href="Assets/css/animate.css">
+		<!-- Icomoon Icon Fonts-->
+		<link rel="stylesheet" href="Assets/css/icomoon.css">
+		<!-- Bootstrap  -->
+		<link rel="stylesheet" href="Assets/css/bootstrap.css">
+		<!-- Flexslider  -->
+		<link rel="stylesheet" href="Assets/css/flexslider.css">
+
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="Assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="Assets/css/owl.theme.default.min.css">
+		<!-- Theme style  -->
+		<link rel="stylesheet" href="Assets/css/style.css">
+
+		<!-- Modernizr JS -->
+		<script src="Assets/js/modernizr-2.6.2.min.js"></script>
+		<!-- FOR IE9 below -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+		<!-- Sources for Mapbox -->
+		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+	    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+	    <!-- the Geocoding Libaries -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+        <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
+
+			<!-- Layers -->
+
+
+
+	<link rel="stylesheet" href="Assets/markercluster/dist/MarkerCluster.css">
+	<link rel="stylesheet" href="Assets/markercluster/dist/MarkerCluster.Default.css">
+	<script src="Assets/markercluster/dist/leaflet.markercluster.js"></script>
+	<link rel="stylesheet" href="Assets/markercluster/dist/leaflet.defaultextent.css">
+	<script src="Assets/markercluster/dist/leaflet.defaultextent.js"></script>
+
+		<!-- A sytle for the map element -->
+		<style>
+			#map {height: 70vh; background-color: grey;}
+
+		</style>
+
+	</head>
+
+	<body>
+		<div id="colorlib-page">
+			<div class="container-wrap">
+			<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+			<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+				<div class="text-center">
+					<div class="author-img" style="background-image: url(Assets/images/graduation.jpg);"></div>
+					<h1 id="colorlib-logo"><a href="index.html">Lindsey Villegas</a></h1>
+				</div>
+				<nav id="colorlib-main-menu" role="navigation" class="navbar">
+					<div id="navbar" class="collapse">
+						<ul>
+							<p><h4>My Labs</h4></p>
+							<li class="active"><a href="https://lindseyvillegas.github.io/Lab_Layout_4_2" target="_blank">Lab 4:Emergency Preparedness</a></li>
+
+						</ul>
+					</div>
+				</nav>
+
+				<div class="colorlib-footer">
+					<ul>
+						<a href="https://github.com/LindseyVillegas" target="_blank"><i class="icon-github"></i></a>
+						<a href="https://www.linkedin.com/in/lindseybaldwin1/" target="_blank"><i class="icon-social-linkedin"></i></a>
+						<a href="https://twitter.com/LindseyKBaldwin?lang=en" target="_blank"><i class="icon-social-twitter"></i></a>
+						<a href="mailto:lb88@uw.edu"><i class="icon-mail6"></i></a>
+					</ul>
+
+					<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved. Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> </p>
+
+				</div>
+
+			</aside>
+
+			<div id="colorlib-main">
+				<section class="colorlib-work" data-section="lab3">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+								<span class="heading-meta"><h2>My Labs</h2></span>
+								<h2 class="colorlib-heading animate-box">Lab 4: Emergency Preparedness</h2>
+
+							</div>
+						</div>
+
+
+						<!-- the map element -->
+						<h2>Earthquake Heat Map</h2>
+						<p>
+							This map shows the earthquakes in the past week as a heatmap in order to point out areas where earthquakes are more recently frequent.
+						</p>
+
+						<!-- MAP #1 -->
+						<div id="map"></div>
+
+
+
+					    <script>
+							mapboxgl.accessToken = 'pk.eyJ1IjoibGI4OCIsImEiOiJjam56OXhwZWIxZTcwM3FwZ2I0OHVidW9nIn0.NNcx6yRWDc7yz3SC7spleA';
+							var map = new mapboxgl.Map({
+							    container: 'map',
+							    style: 'mapbox://styles/lb88/cjop7jpiy4hqp2snwarbkcn5u',
+							    center: [-120, 50],
+							    zoom: 2
+							});
+
+							map.on('load', function() {
+							    // Add a geojson point source.
+							    // Heatmap layers also work with a vector tile source.
+							    map.addSource('earthquakes', {
+							        "type": "geojson",
+							        "data": "https://www.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson"
+							    });
+
+							    map.addLayer({
+							        "id": "earthquakes-heat",
+							        "type": "heatmap",
+							        "source": "earthquakes",
+							        "maxzoom": 9,
+							        "paint": {
+							            // Increase the heatmap weight based on frequency and property magnitude
+							            "heatmap-weight": [
+							                "interpolate",
+							                ["linear"],
+							                ["get", "mag"],
+							                0, 0,
+							                6, 1
+							            ],
+							            // Increase the heatmap color weight weight by zoom level
+							            // heatmap-intensity is a multiplier on top of heatmap-weight
+							            "heatmap-intensity": [
+							                "interpolate",
+							                ["linear"],
+							                ["zoom"],
+							                0, 1,
+							                9, 3
+							            ],
+							            // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
+							            // Begin color ramp at 0-stop with a 0-transparancy color
+							            // to create a blur-like effect.
+							            "heatmap-color": [
+							                "interpolate",
+							                ["linear"],
+							                ["heatmap-density"],
+							                0, "rgba(33,102,172,0)",
+							                0.2, "rgb(103,169,207)",
+							                0.4, "rgb(209,229,240)",
+							                0.6, "rgb(253,219,199)",
+							                0.8, "rgb(239,138,98)",
+							                1, "rgb(178,24,43)"
+							            ],
+							            // Adjust the heatmap radius by zoom level
+							            "heatmap-radius": [
+							                "interpolate",
+							                ["linear"],
+							                ["zoom"],
+							                0, 2,
+							                9, 20
+							            ],
+							            // Transition from heatmap to circle layer by zoom level
+							            "heatmap-opacity": [
+							                "interpolate",
+							                ["linear"],
+							                ["zoom"],
+							                7, 1,
+							                9, 0
+							            ],
+							        }
+							    }, 'waterway-label');
+
+							    map.addLayer({
+							        "id": "earthquakes-point",
+							        "type": "circle",
+							        "source": "earthquakes",
+							        "minzoom": 7,
+							        "paint": {
+							            // Size circle radius by earthquake magnitude and zoom level
+							            "circle-radius": [
+							                "interpolate",
+							                ["linear"],
+							                ["zoom"],
+							                7, [
+							                    "interpolate",
+							                    ["linear"],
+							                    ["get", "mag"],
+							                    1, 1,
+							                    6, 4
+							                ],
+							                16, [
+							                    "interpolate",
+							                    ["linear"],
+							                    ["get", "mag"],
+							                    1, 5,
+							                    6, 50
+							                ]
+							            ],
+							            // Color circle by earthquake magnitude
+							            "circle-color": [
+							                "interpolate",
+							                ["linear"],
+							                ["get", "mag"],
+							                1, "rgba(33,102,172,0)",
+							                2, "rgb(103,169,207)",
+							                3, "rgb(209,229,240)",
+							                4, "rgb(253,219,199)",
+							                5, "rgb(239,138,98)",
+							                6, "rgb(178,24,43)"
+							            ],
+							            "circle-stroke-color": "white",
+							            "circle-stroke-width": 1,
+							            // Transition from heatmap to circle layer by zoom level
+							            "circle-opacity": [
+							                "interpolate",
+							                ["linear"],
+							                ["zoom"],
+							                7, 0,
+							                8, 1
+							            ]
+							        }
+							    }, 'waterway-label');
+							});
+
+			//adding the Geocoding controls
+            map.addControl(new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken
+            }));
+            // Add zoom and rotation controls to the map.
+            map.addControl(new mapboxgl.NavigationControl()); document.getElementById('fly').addEventListener('click', function () {
+
+ });
+							</script>
+
+
+ 					<p></p> <!-- Spacing between map and information -->
+						<h4>Click <a href="https://lindseyvillegas.github.io/Lab_Layout_4.html">HERE</a> to go back to the earthquake page</h4>
+
+				</section>
+
+
+
+
+
+		</div><!-- end:colorlib-main -->
+		</div><!-- end:container-wrap -->
+		</div><!-- end:colorlib-page -->
+
+		<!-- jQuery -->
+		<script src="Assets/js/jquery.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="Assets/js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="Assets/js/bootstrap.min.js"></script>
+		<!-- Waypoints -->
+		<script src="Assets/js/jquery.waypoints.min.js"></script>
+		<!-- Flexslider -->
+		<script src="Assets/js/jquery.flexslider-min.js"></script>
+		<!-- Owl carousel -->
+		<script src="Assets/js/owl.carousel.min.js"></script>
+		<!-- Counters -->
+		<script src="Assets/js/jquery.countTo.js"></script>
+
+
+		<!-- MAIN JS -->
+		<script src="Assets/js/main.js"></script>
+
+	</body>
+
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Mapbox</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- the Geocoding Libaries -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+        <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
+
+
+ <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>       
+
+</head>
+
+
+<body>
+
+
+<style>
+body {
+    overflow: hidden;
+}
+body * {
+   -webkit-touch-callout: none;
+     -webkit-user-select: none;
+        -moz-user-select: none;
+         -ms-user-select: none;
+             user-select: none;
+}
+.map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+    
+</style>
+
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.css' type='text/css' />
+
+<div id='before' class='map'></div>
+<div id='after' class='map'></div>
+<nav id="menu"></nav>
+
+
+<script>
+                    mapboxgl.accessToken = 'pk.eyJ1IjoibGI4OCIsImEiOiJjam56OXhwZWIxZTcwM3FwZ2I0OHVidW9nIn0.NNcx6yRWDc7yz3SC7spleA';
+
+                    var beforeMap = new mapboxgl.Map({
+                    container: 'before',
+                    style: 'mapbox://styles/lb88/cjooxdg006zwu2smjk0g6ulfq',
+                    center: [-122.3,47.6],
+                    zoom: 10
+                    });
+
+                    var afterMap = new mapboxgl.Map({
+                    container: 'after',
+                    style: 'mapbox://styles/lb88/cjop5l7v058dg2rphswguexy2',
+                    center: [-122.3,47.6],
+                    zoom: 10
+                     });
+
+
+                afterMap.on('load', function(){
+                afterMap.addSource('earthquakes', {
+                    "type": "geojson",
+                    "data": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson"
+                });
+
+
+                //add the earthquakes to the map
+                afterMap.addLayer({
+                    "id":"equakes",
+                    "type":"circle",
+                    "source":"earthquakes",
+                    "paint": {
+                            "circle-color": "#ff9966",
+                            "circle-opacity": .75,
+                            "circle-radius": 8,
+                            "circle-stroke-color": '#b30000',
+                            "circle-stroke-width": 2,
+                            "circle-stroke-opacity": 0.75
+                        }
+                });
+                //Thanks to: https://www.mapbox.com/mapbox-gl-js/example/popup-on-click/ 
+                afterMap.on('click', 'equakes', function (e) {
+                    var coordinates = e.features[0].geometry.coordinates.slice();
+                    var description = "<p> Magnitude and Location: " + e.features[0].properties.title + " <br> Event Website: <a target = '_blank' href=' " + e.features[0].properties.url + "'> Earthquake Event</a></p>";
+                    
+                    
+                    // Ensure that if the map is zoomed out such that multiple
+                    // copies of the feature are visible, the popup appears
+                    // over the copy being pointed to.
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+                    //make the popup
+                    new mapboxgl.Popup()
+                        .setLngLat(coordinates)
+                        .setHTML(description)
+                        .addTo(afterMap);
+                         });
+    
+
+    var map = new mapboxgl.Compare(beforeMap, afterMap, {
+    // Set this to enable comparing two maps by mouse movement:
+    // mousemove: true
+});
+                  
+                });
+               
+</script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Lindsey Villegas</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="This website was created by Lindsey Villegas to store the Masters program labs." />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Lindsey Villegas" />
+
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+
+		<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+
+		<!-- Animate.css -->
+		<link rel="stylesheet" href="Assets/css/animate.css">
+		<!-- Icomoon Icon Fonts-->
+		<link rel="stylesheet" href="Assets/css/icomoon.css">
+		<!-- Bootstrap  -->
+		<link rel="stylesheet" href="Assets/css/bootstrap.css">
+		<!-- Flexslider  -->
+		<link rel="stylesheet" href="Assets/css/flexslider.css">
+
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="Assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="Assets/css/owl.theme.default.min.css">
+		<!-- Theme style  -->
+		<link rel="stylesheet" href="Assets/css/style.css">
+
+		<!-- Modernizr JS -->
+		<script src="Assets/js/modernizr-2.6.2.min.js"></script>
+		<!-- FOR IE9 below -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- the Geocoding Libaries -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+        <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
+
+			<!-- Layers -->
+
+
+
+	<link rel="stylesheet" href="Assets/markercluster/dist/MarkerCluster.css">
+	<link rel="stylesheet" href="Assets/markercluster/dist/MarkerCluster.Default.css">
+	<script src="Assets/markercluster/dist/leaflet.markercluster.js"></script>
+	<link rel="stylesheet" href="Assets/markercluster/dist/leaflet.defaultextent.css">
+	<script src="Assets/markercluster/dist/leaflet.defaultextent.js"></script>
+
+
+
+	</head>
+
+	<body>
+		<div id="colorlib-page">
+			<div class="container-wrap">
+			<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+			<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+				<div class="text-center">
+					<div class="author-img" style="background-image: url(Assets/images/graduation.jpg);"></div>
+					<h1 id="colorlib-logo"><a href="index.html">Lindsey Villegas</a></h1>
+				</div>
+				<nav id="colorlib-main-menu" role="navigation" class="navbar">
+					<div id="navbar" class="collapse">
+						<ul>
+							<p><h4>My Labs</h4></p>
+							<li><a href="Leaflet.html">Lab 3: Leaflet</a></li>
+							<li class="active"><a href="Mapbox_1.html">Lab 4: Mapbox</a></li>
+						</ul>
+					</div>
+				</nav>
+
+				<div class="colorlib-footer">
+					<ul>
+						<a href="https://github.com/LindseyVillegas" target="_blank"><i class="icon-github"></i></a>
+						<a href="https://www.linkedin.com/in/lindseybaldwin1/" target="_blank"><i class="icon-social-linkedin"></i></a>
+						<a href="https://twitter.com/LindseyKBaldwin?lang=en" target="_blank"><i class="icon-social-twitter"></i></a>
+						<a href="mailto:lb88@uw.edu"><i class="icon-mail6"></i></a>
+					</ul>
+
+					<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved. Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> </p>
+
+				</div>
+
+			</aside>
+
+			<div id="colorlib-main">
+				<section class="colorlib-work" data-section="lab3">
+					<div class="colorlib-narrow-content">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+								<span class="heading-meta"><h2>My Labs</h2></span>
+								<h2 class="colorlib-heading animate-box">Lab 4: Earthquake Map</h2>
+
+
+							</div>
+						</div>
+
+
+						<!-- the map element -->
+
+
+						<h2>Earthquakes and Emergency Community Hubs</h2>
+						<p>
+							This map shows the locations of emergency community hubs in Seattle, WA as well as recent earthquakes. There are around 135 hubs currently located in Seattle where people can gather after a major disaster. To learn more about the Community Emergency Hubs, <a href="https://www.seattle.gov/emergency-management/prepare/prepare-your-neighborhood/community-emergency-hubs" target="_blank">CLICK HERE</a>.
+						</p>
+
+						<h4>NOTE: Due to the layout of this template, the map fails to show fully. To see the full view, <a href="https://lindseyvillegas.github.io/Lab_Layout_4_1.html" target="_blank">CLICK HERE.</a></h4>
+
+						<h4>
+							To view the earthquake data as a heatmap, <a href="https://lindseyvillegas.github.io/Lab_Layout_4_2.html" target="_blank">CLICK HERE.</a>
+						</h4>
+
+
+							<style>
+							.map {
+							    position: absolute;
+							    height: 100vh;
+							    width: 50vw;
+							}
+
+						.mapboxgl-popup {
+						        max-width: 400px;
+						        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+						}
+						    #fly {
+						        display: block;
+						        position: relative;
+						        margin: 0px auto;
+						        width: 65%;
+						        height: 60px;
+						        padding: 1px;
+						        border: none;
+						        border-radius: 4px;
+						        font-size: 18px;
+						        text-align: center;
+						        color: #fff;
+						        background: #808080;
+						    }
+
+						</style>
+
+						<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.css' type='text/css' />
+
+						<!-- MAP #1 -->
+
+
+<div id='before' class='map'></div>
+<div id='after' class='map'></div>
+
+
+
+<script>
+                    mapboxgl.accessToken = 'pk.eyJ1IjoibGI4OCIsImEiOiJjam56OXhwZWIxZTcwM3FwZ2I0OHVidW9nIn0.NNcx6yRWDc7yz3SC7spleA';
+
+                    var beforeMap = new mapboxgl.Map({
+                    container: 'before',
+                    style: 'mapbox://styles/lb88/cjooxdg006zwu2smjk0g6ulfq',
+                    center: [-122.3,47.6],
+                    zoom: 10
+                    });
+
+                    var afterMap = new mapboxgl.Map({
+                    container: 'after',
+                    style: 'mapbox://styles/lb88/cjop5l7v058dg2rphswguexy2',
+                    center: [-122.3,47.6],
+                    zoom: 10
+                     });
+
+
+                afterMap.on('load', function(){
+                afterMap.addSource('earthquakes', {
+                    "type": "geojson",
+                    "data": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson"
+                });
+
+
+                //add the earthquakes to the map
+                afterMap.addLayer({
+                    "id":"equakes",
+                    "type":"circle",
+                    "source":"earthquakes",
+                    "paint": {
+                            "circle-color": "#ff9966",
+                            "circle-opacity": .75,
+                            "circle-radius": 8,
+                            "circle-stroke-color": '#b30000',
+                            "circle-stroke-width": 2,
+                            "circle-stroke-opacity": 0.75
+                        }
+                });
+                //Thanks to: https://www.mapbox.com/mapbox-gl-js/example/popup-on-click/
+                afterMap.on('click', 'equakes', function (e) {
+                    var coordinates = e.features[0].geometry.coordinates.slice();
+                    var description = "<p> Magnitude and Location: " + e.features[0].properties.title + " <br> Event Website: <a target = '_blank' href=' " + e.features[0].properties.url + "'> Earthquake Event</a></p>";
+
+
+                    // Ensure that if the map is zoomed out such that multiple
+                    // copies of the feature are visible, the popup appears
+                    // over the copy being pointed to.
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+                    //make the popup
+                    new mapboxgl.Popup()
+                        .setLngLat(coordinates)
+                        .setHTML(description)
+                        .addTo(afterMap);
+                         });
+
+
+    var map = new mapboxgl.Compare(beforeMap, afterMap, {
+    // Set this to enable comparing two maps by mouse movement:
+    // mousemove: true
+});
+       });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+				</section>
+
+
+
+
+
+		</div><!-- end:colorlib-main -->
+		</div><!-- end:container-wrap -->
+		</div><!-- end:colorlib-page -->
+
+		<!-- jQuery -->
+		<script src="Assets/js/jquery.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="Assets/js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="Assets/js/bootstrap.min.js"></script>
+		<!-- Waypoints -->
+		<script src="Assets/js/jquery.waypoints.min.js"></script>
+		<!-- Flexslider -->
+		<script src="Assets/js/jquery.flexslider-min.js"></script>
+		<!-- Owl carousel -->
+		<script src="Assets/js/owl.carousel.min.js"></script>
+		<!-- Counters -->
+		<script src="Assets/js/jquery.countTo.js"></script>
+
+
+		<!-- MAIN JS -->
+		<script src="Assets/sjs/main.js"></script>
+
+	</body>
+
+
+</html>
