@@ -1,13 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Lindsey Villegas</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="This website was created by Lindsey Villegas to store the Masters program labs." />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Lindsey Villegas" />
 
-	  <title>Lab 4: Geolocation with Leaflet</title>
 
-	  <meta charset="utf-8" />
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /><!--These settings are ideal for full-screen mobile use-->
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-		<!--style and external script links-->
+
+		<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+
+		<!-- Animate.css -->
+		<link rel="stylesheet" href="Assets/css/animate.css">
+		<!-- Icomoon Icon Fonts-->
+		<link rel="stylesheet" href="Assets/css/icomoon.css">
+		<!-- Bootstrap  -->
+		<link rel="stylesheet" href="Assets/css/bootstrap.css">
+		<!-- Flexslider  -->
+		<link rel="stylesheet" href="Assets/css/flexslider.css">
+
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="Assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="Assets/css/owl.theme.default.min.css">
+		<!-- Theme style  -->
+		<link rel="stylesheet" href="Assets/css/style.css">
+
+		<!-- Modernizr JS -->
+		<script src="Assets/js/modernizr-2.6.2.min.js"></script>
+		<!-- FOR IE9 below -->
+		<!--[if lt IE 9]>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+		<!-- the leaflet CSS and JS library-->
+		 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+		   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+		   crossorigin=""/>
+
+		 <!-- Make sure you put this AFTER Leaflet's CSS -->
+		 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+		   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+		   crossorigin=""></script>
+ 		<!-- Add JQuery to get local GeoJson file-->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+			<!-- Layers -->
+
+
+
+	<link rel="stylesheet" href="Assets/markercluster/dist/MarkerCluster.css">
+	<link rel="stylesheet" href="Assets/markercluster/dist/MarkerCluster.Default.css">
+	<script src="Assets/markercluster/dist/leaflet.markercluster.js"></script>
+	<link rel="stylesheet" href="Assets/markercluster/dist/leaflet.defaultextent.css">
+	<script src="Assets/markercluster/dist/leaflet.defaultextent.js"></script>
+
+		<!-- A sytle for the map element -->
+		<style>
+			#map {height: 70vh; background-color: grey;}
+			#map1 {height: 70vh; background-color: grey;}
+		</style>
+
+    <!--style and external script links-->
 		<link rel="stylesheet" href="Assets/css/504_lab4.css" type="text/css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
@@ -20,11 +79,96 @@
 <!-- Stylesheet for info button.-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-</head>
-<body>
+	</head>
 
-<div id="map"></div>
-<script src="Assets/js/504_lab4.js"></script>
+	<body>
+		<div id="colorlib-page">
+			<div class="container-wrap">
+			<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+			<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+				<div class="text-center">
+					<div class="author-img" style="background-image: url(Assets/images/graduation.jpg);"></div>
+					<h1 id="colorlib-logo"><a href="index.html">Lindsey Villegas</a></h1>
+				</div>
+				<nav id="colorlib-main-menu" role="navigation" class="navbar">
+					<div id="navbar" class="collapse">
+						<ul>
+							<p><h4>My Labs</h4></p>
+							<li><a href="Leaflet.html">Leaflet: Bicycle Routes</a></li>
+							<li class="active"><a href="Mapbox_1.html">Mapbox: Mapping Earthquakes</a></li>
+							<li><a href="StoryMap.html">Story Map: Palm Oil</a></li>
+							<li><a href="Geolocation.html">Leaflet: Geolocation</a></li>
+							<li><a href="StoryMap.html">Leaflet: Routing</a></li>
+						</ul>
+					</div>
+				</nav>
 
-</body>
+				<div class="colorlib-footer">
+					<ul>
+						<a href="https://github.com/LindseyVillegas" target="_blank"><i class="icon-github"></i></a>
+						<a href="https://www.linkedin.com/in/lindseybaldwin1/" target="_blank"><i class="icon-social-linkedin"></i></a>
+						<a href="https://twitter.com/LindseyKBaldwin?lang=en" target="_blank"><i class="icon-social-twitter"></i></a>
+						<a href="mailto:lb88@uw.edu"><i class="icon-mail6"></i></a>
+					</ul>
+
+					<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved. Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> </p>
+
+				</div>
+
+			</aside>
+
+			<div id="colorlib-main">
+				<section class="colorlib-work" data-section="places">
+						<div class="colorlib-narrow-content">
+							<div class="row">
+								<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+									<h2 class="colorlib-heading animate-box">Places</h2>
+								</div>
+							</div>
+
+							<h3> Places on my bucket list!</h3>
+							<p>These are some of the places that I hope to visit one day. These include experiences, for example seeing the Northern Lights in Alaska and seeing wildlife on the Galapagos Islands. Pan around to see more locations!</p>
+							<p>
+								<b>Purple</b> represents schools, <b>pink</b> represents hospitals, and <b>green</b> represents parks.
+							</p>
+              <div id="map"></div>
+              <script src="Assets/js/504_lab4.js"></script>
+						</div>
+					</section>
+
+							</div>
+						</div>
+					</section>
+
+
+
+
+		</div><!-- end:colorlib-main -->
+		</div><!-- end:container-wrap -->
+		</div><!-- end:colorlib-page -->
+
+		<!-- jQuery -->
+		<script src="Assets/js/jquery.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="Assets/js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="Assets/js/bootstrap.min.js"></script>
+		<!-- Waypoints -->
+		<script src="Assets/js/jquery.waypoints.min.js"></script>
+		<!-- Flexslider -->
+		<script src="Assets/js/jquery.flexslider-min.js"></script>
+		<!-- Owl carousel -->
+		<script src="Assets/js/owl.carousel.min.js"></script>
+		<!-- Counters -->
+		<script src="Assets/js/jquery.countTo.js"></script>
+
+
+		<!-- MAIN JS -->
+		<script src="Assets/js/main.js"></script>
+
+	</body>
+
+
 </html>
